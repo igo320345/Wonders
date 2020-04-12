@@ -30,6 +30,7 @@ class DescriptionFragment: Fragment() {
         activity.setSupportActionBar(description_toolbar)
         activity.supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         Picasso.get().load(wonder.pictureUrl).into(wonder_image)
+        wonder_description.text = wonder.description
     }
 
 }
