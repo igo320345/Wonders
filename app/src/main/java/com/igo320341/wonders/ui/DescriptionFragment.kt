@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.igo320341.wonders.R
 import com.igo320341.wonders.model.Wonder
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_description.*
 
 
@@ -29,8 +28,8 @@ class DescriptionFragment: Fragment() {
         description_toolbar.title = wonder.name
         activity.setSupportActionBar(description_toolbar)
         activity.supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        Picasso.get().load(wonder.pictureUrl).into(wonder_image)
         wonder_description.text = wonder.description
+        image_pager.adapter = ImageViewPagerAdapter(activity, wonder.pictureList)
     }
 
 }
